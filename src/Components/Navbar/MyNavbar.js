@@ -45,7 +45,6 @@ const MyNavbar = (props)=> {
           </Nav>
         </Navbar.Collapse>
         { localStorage.getItem('isLogged') && <>
-        <Button disabled variant="light">{ localStorage.getItem('isTeacher') === true ? 'You are Teacher' : 'You are Pupil' }</Button>
         <Button disabled variant="light">Login: {localStorage.getItem('login')}</Button>
         <Button disabled variant="light">Name: {localStorage.getItem('name')}</Button>
         <Button disabled variant="light">Surname: {localStorage.getItem('surname')}</Button>

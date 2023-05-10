@@ -64,12 +64,12 @@ const AddLesson = (props)=> {
 
           <Form.Group className="mb-3" controlId="formBasicText">
           <Form.Label>name</Form.Label>
-          <Form.Control disabled value={user.name} onChange={(event) => setObjectsData(event, "name")} type="text" placeholder="Enter Name" />
+          <Form.Control disabled value={user.name} type="text" placeholder="Enter Name" />
           </Form.Group>
 
          <Form.Group className="mb-3" controlId="formBasicText">
           <Form.Label>surname</Form.Label>
-          <Form.Control disabled value={user.surname} onChange={(event) => setObjectsData(event, "surname")} type="text" placeholder="Enter Surname" />
+          <Form.Control disabled value={user.surname} type="text" placeholder="Enter Surname" />
           </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicText">

@@ -4,6 +4,11 @@ import { useState, useEffect } from "react";
 import { Button, Card,Container,ListGroup } from "react-bootstrap";
 import { Col,Row } from "react-bootstrap";
 import Table from 'react-bootstrap/Table';
+import { Link,  BrowserRouter as Router,Route,Switch } from "react-router-dom";
+import InfoLesson from '../InfoLesson/InfoLesson';
+
+
+
 
 const Lesson = (props) => {
 
@@ -31,8 +36,12 @@ const Lesson = (props) => {
         window.location.reload();
     })
 }
+
   
     return <>
+    <Switch>
+      <Route path="/lesson/:id" component={InfoLesson} />
+    </Switch>
     <Container>
     <Row>
         {listOfLessons.map((lekcja)=> <Col xs={10} xl = {10}>
@@ -41,24 +50,25 @@ const Lesson = (props) => {
                     <Table striped bordered hover>
                     <thead>
                       <tr>
-                        <th>name</th>
-                        <th>surname</th>
                         <th>address</th>
                         <th>date</th>
                         <th>time</th>
-                        <th></th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>{lekcja?.name}</td>
-                        <td>{lekcja?.surname}</td>
                         <td>{lekcja?.address}</td>
                         <td>{lekcja?.date}</td>
                         <td>{lekcja?.time}</td>
+                        <td>
+                            <Link to={`/lesson?id=${lekcja.id}`}>
+                                <Button variant="primary">More information</Button>
+                            </Link>
+
+                        </td>
                         <td><Button variant="danger" onClick={()=>{
                             deleteLesson(lekcja.id)
-                        }} >Usuń</Button></td>
+                        }} >Delete</Button></td>
                       </tr>
                     </tbody>
                     </Table>
